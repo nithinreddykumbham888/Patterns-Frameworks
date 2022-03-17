@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="assignment-01-nithinreddykumbham888/src/|assignment-02-nithinreddykumbham888/src/|Patterns_Assignment03/src/|BinarySearchTree/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="assignment-01-nithinreddykumbham888/src"/>
+	<classpathentry kind="src" path="assignment-02-nithinreddykumbham888/src"/>
+	<classpathentry kind="src" path="BinarySearchTree/src"/>
+	<classpathentry kind="src" path="Patterns_Assignment03/src"/>
+	<classpathentry kind="output" path="BinarySearchTree/bin"/>
+</classpath>
