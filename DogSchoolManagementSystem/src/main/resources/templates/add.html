@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/dogs}"  th:object="${dog}" method="POST">
+<div>
+<label> Dog Name </label> 
+<input type="text" name="name"  th:field="*{name}"
+placeholder="Enter Dog Name"/>
+</div>
+<div>
+<label> Dog Breed </label> 
+<input type="text" name="breed"  th:field="*{breed}"
+placeholder="Enter Dog Breed" />
+</div>
+<div>
+<button type="submit"  class="btn">Submit</button>
+</div>
+</form>
+</body>
+</html>

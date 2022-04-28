@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>Dog School</title>
+</head>
+<body>
+<div> 
+<a th:href="@{/dogs}"><h1><b>Dog School Management System</b></h1></a>
+</div>
+<br>
+<div class="btn"> <a th:href="@{/dogs/add}"><h4><b><i>Add</i></b></h4></a></div>
+<br>
+<table border="True">
+<thead>
+<tr>
+<th><b><i>Dog Name</i></b></th>
+<th><b><i>Dog Breed</i></b></th>
+<th><b><i>Actions</i></b></th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="dog: ${dogs}">
+<td th:text="${dog.name}"></td>
+<td th:text="${dog.breed}"></td>
+<td>
+<a th:href = "@{/dogs/edit/{id}(id=${dog.id})}" class = "btn">EDIT</a>
+<a th:href = "@{/dogs/{id}(id=${dog.id})}" class = "btn">DELETE</a></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
