@@ -1,7 +1,11 @@
 package com.SpringApplication.SpringBootDemo.controller;
 
 import java.util.List;
+import java.util.logging.Logger;
 
+import javax.validation.Valid;
+
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,14 +19,17 @@ import com.SpringApplication.SpringBootDemo.entity.Department;
 import com.SpringApplication.SpringBootDemo.service.DepartmentService;
 import com.SpringApplication.SpringBootDemo.service.DepartmentServiceImpl;
 
+
+
 @RestController
 public class DepartmentController {
 	
 	@Autowired
 	private DepartmentService departmentService;
+
 	
 	@PostMapping("/departments")
-	public Department saveDepartment(@RequestBody Department department) {
+	public Department saveDepartment(@Valid @RequestBody Department department) {
 		return departmentService.saveDepartment(department);
 	}
 	
@@ -45,6 +52,11 @@ public class DepartmentController {
 	@PutMapping("/departments/{id}")
 	public Department updateDepartment(@PathVariable("id") Long departmentId,@RequestBody Department department) {
 		return departmentService.updateDepartment(departmentId,department);
+	}
+	
+	@GetMapping("department/name/{name}")
+	public Department fetchDepartmentByName(@PathVariable("name") String departmentName) {
+		return departmentService.fetchDepartmentByName(departmentName);
 	}
 
 }
