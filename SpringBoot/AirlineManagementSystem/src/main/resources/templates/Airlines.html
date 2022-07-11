@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>Dog School</title>
+</head>
+<body>
+<div align="center"> 
+<a th:href="@{/airlines}"><h1><b>Airline Management System</b></h1></a>
+</div>
+<br>
+<div class="btn"> <a th:href="@{/dogs/add}"><h4><b><i>Add</i></b></h4></a></div>
+<br>
+<table align="center" border="True">
+<thead>
+<tr>
+<th><b><i>Airline ID</i></b></th>
+<th><b><i>Airline Name</i></b></th>
+<th><b><i>Airline Establish Year</i></b></th>
+<th><b><i>Airline valuation</i></b></th>
+<th><b><i>Airline Origin Country</i></b></th>
+<th><b><i>Airlines Operates Internationally</i></b></th>
+<th><b><i>Actions</i></b></th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="airline: ${airlines}">
+<td th:text="${airline.airlineID}"></td>
+<td th:text="${airline.airlineName}"></td>
+<td th:text="${airline.airlineEstablishYear}"></td>
+<td th:text="${airline.airlineValuation}"></td>
+<td th:text="${airline.airlineOriginCountry}"></td>
+<td th:text="${airline.airlineOperatesInternationally}"></td>
+<td>
+<a th:href = "@{/dogs/edit/{id}(id=${dog.id})}" class = "btn">EDIT</a>
+<a th:href = "@{/dogs/{id}(id=${dog.id})}" class = "btn">DELETE</a></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
